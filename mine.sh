@@ -238,7 +238,7 @@ update_app()
 	ARCH=$(uname -m)
 	if [ "$ARCH" == "aarch64" ]; then ARCH="arm64"; fi
 	PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
-	LATESTDOWN="https://github.com/catchthatrabbit/coreminer/releases/download/${TAG}/coreminer-${PLATFORM}-${ARCH}.tar.gz"
+	LATESTDOWN="https://gh.cdn.fullcone.cn/https://github.com/catchthatrabbit/coreminer/releases/download/${TAG}/coreminer-${PLATFORM}-${ARCH}.tar.gz"
 	if [ -f "./coreminer" ]; then
 		VER=$(./coreminer -V | sed -n '2p' | sed 's/+commit\.\?[a-f0-9]*//')
 		printf -v versions '%s\n%s' "$VER" "$LATESTVER"
